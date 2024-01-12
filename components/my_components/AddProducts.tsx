@@ -11,9 +11,9 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { revalidateTag } from "next/cache";
 import { addDataToDB } from "@/actions/serverActions";
+import AddProductButton from "./AddProductButton";
 
 const formSchema = z.object({
   product_name: z.string(),
@@ -31,7 +31,6 @@ const AddProducts = () => {
   });
 
   
-
   return (
     <div className="w-full flex justify-center py-8">
         <Form {...form}>
@@ -76,9 +75,7 @@ const AddProducts = () => {
             }}
           />
           
-          <Button type="submit" className="w-full text-sm bg-purple-500 hover:bg-purple-700">
-            Submit
-          </Button>
+          <AddProductButton />
         </form>
       </Form>
     </div>

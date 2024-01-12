@@ -1,6 +1,7 @@
 "use server"
 import { revalidateTag } from "next/cache";
 import { Product } from "../app/page"
+import SuccessToast from "@/components/my_components/SuccessToast";
 
 
 export const addDataToDB = async (values:any) => {
@@ -21,4 +22,12 @@ export const addDataToDB = async (values:any) => {
     console.log(res?.status) // 201
     
     revalidateTag("products") 
+
+    // return (
+    //     <>
+    //     {
+    //         res.status === 201 ? <SuccessToast/> : <></>
+    //     }
+    //     </>
+    // )
   };
